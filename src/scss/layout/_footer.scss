@@ -1,0 +1,186 @@
+.footer{
+    background-color: $bg-black-light;
+    padding-top: 50px;
+    color: $text-white;
+    &__top{
+        margin-bottom: 27px;
+        &__left{
+            width: 380px;
+            float: left;    
+        }
+        &__right{
+            @include flex-row-vertical(space-between);
+            .footer__item{
+                padding-left: 15px;
+            }
+        }
+    }
+    &__title{
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+
+    &__item{
+        &__sub-items{
+            p{
+                font-weight: 300;
+                &:nth-child(2),
+                &:nth-child(3){
+                    font-weight: 400;
+                }
+                span{
+                    display: block;
+                    font-weight: 300;
+                    line-height: 2;
+                }
+            }
+            a{
+                display: block;
+            }
+            &__item{
+                font-size: 1.4rem;
+                line-height: 2;
+                color: $text-white;
+                text-decoration: none;
+            }
+            p,&__item{
+                img{
+                    display: inline;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    &__socials{
+        display: flex;
+        gap: 10px;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__center{
+        display: flex;
+        padding-top: 24px;
+        padding-bottom: 20px;
+        border-top: 1px solid $gray-dark;
+        &__left{
+            width: 380px;
+            img{
+                width: 162px;
+                height: 50px;
+                object-fit: contain;
+                border: 1px solid $gray-dark;
+                padding: 8px 20px;
+                border-radius: 10px;
+            }
+        }
+        &__right{
+            display: flex;
+            flex-grow:1;
+            justify-content: space-between;
+            img{
+                width: 110px;
+                height: 110px;
+                margin-right: 26px;
+            }
+        }
+        &__parent{
+            padding-left: 15px;
+            p{
+                font-weight: 300;
+            }
+        }
+    }
+
+    &__bottom{
+        @include flex-row-horizontal;
+        justify-content: space-between;
+        p{
+            a{
+                color: $text-white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1199px) {
+    .footer{
+        &__left{
+            min-width: 358px;
+        }
+        &__item{
+            padding-left: 0 !important;
+        }
+        &__center{
+            &__parent{
+                padding-left: 0;
+            }
+            &__right{
+                flex-grow: unset;
+                img{
+                    margin-right: unset;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .footer{
+        &__top{
+            &__left{
+                width: 270px;
+            }
+            &__right{
+                flex-wrap: wrap;
+            }
+        }
+        &__center{
+            &__left{
+                width: 270px;
+            }
+        }
+        &__bottom{
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer{
+        &__top{
+            &__left{
+                float: none;
+                margin-bottom: 20px;
+            }
+            &__right{
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        &__title{
+            margin-bottom: 10px;
+
+        }
+        &__center{
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+            &__right{
+                flex-direction: column;
+                gap: 20px;
+                img{
+                    margin: 0 auto;
+                }
+            }
+        }
+        &__bottom{
+            font-size: 1.2rem;
+        }
+    }
+}

@@ -1,0 +1,168 @@
+.menu-mobile{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    &.active{
+        display: block;
+        .menu-mobile__overlay,.menu-mobile__wrapper{
+            visibility: visible;
+            opacity: 1;
+        }
+        .menu-mobile__overlay{
+            z-index: -1;
+        }
+        .menu-mobile__wrapper{
+            left: 0;
+        }
+    }
+    &__overlay{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        visibility: hidden;
+        opacity: 0;
+        background-color: rgba($color: $bg-black, $alpha: 0.5);
+        box-shadow: 1px 0 16px 0 $bg-black;
+        transition: all 0.3s;
+        span{
+            color: red;
+            font-size: 5rem;
+            font-weight: 700;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    }
+    &__wrapper{
+        position: absolute;
+        left: -300px;
+        top:0;
+        width: 300px;
+        height: 100vh;
+        transition: 1s;        
+        background-color: $bg-white;
+        overflow-y: scroll;
+    }
+    &__search{
+        height: 70px;
+        display: flex;
+        border-bottom: 0.5px solid $gray;
+        box-shadow: 0 0px 8px -2px $bg-black;
+        input[type='text']{
+            flex: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding: 0 10px ;
+            font-weight: 300;
+            color: $text-black;
+            font-style: italic;
+            color: rgba($color: $text-black, $alpha: 0.4);
+            z-index: 10;
+        }
+        button{
+            @include size(70px,100%);
+            background-color: transparent;
+            border: none;
+            img{
+                padding: 15px;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: invert(1);
+            }
+        }
+    }
+    &__buttons{
+        display: flex;
+        height: 50px;
+        position: relative;
+        &::before{
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 1px;
+            background-color: rgba($color: $text-black, $alpha: 0.4);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__left,&__right{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray;
+        text-transform: uppercase;
+        color: $text-black;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    &__categories{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $gray;
+    }
+    &__link{
+        color: $text-black;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 10px 8px;
+        &.has-dropdown{
+            position: relative;
+        }
+    }
+    &__sub-link{
+        display: flex;
+        flex-direction: column;
+        a{
+            color: $text-black;
+            padding: 10px 8px 10px 16px;
+        }
+    }
+    
+    &__bottom{
+        display: flex;
+        height: 50px;
+        position: relative;
+        border-bottom: 1px solid $gray;
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: $gray;
+            width: 0.5px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+        a{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: $text-black;
+            font-weight: 300;
+        }
+    }
+    &__toggle{
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 2rem;
+        border: 1px solid black;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,105 @@
+.register{
+    padding-top: 26px;
+    padding-bottom: 28px;
+    background: $gray;
+
+    &__wrapper{
+        @include flex-row-horizontal;
+        justify-content: space-between;
+    }
+
+    &__left{
+        @include flex-row-horizontal;
+        gap: 32px;
+        img{
+            width: 65px;
+            height: auto;
+        }
+    }
+    &__describer{
+        h3{
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: $text-black;
+        }
+        p{
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+    }
+
+    &__right{
+        height: 40px;
+        display: flex;
+        input[type="text"]{
+            width: 484px;
+            height: 100%;
+            border: none;
+            font-size: 1.4rem;
+            font-weight: 400;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            padding: 0 20px;
+            &::placeholder{
+                font-weight: 300;
+                font-style: italic;
+            }
+        }
+        button[type='submit']{
+            background-color: $orange;
+            border: none;
+            color: $text-white;
+            font-weight: 600;
+            white-space: nowrap;
+            align-self: stretch;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+@media screen and (max-width:1199px) {
+    .register{
+        &__right{
+            input[type='text']{
+                width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .register{
+        &__wrapper{
+            flex-direction: column;
+            gap: 30px;
+        }
+        &__right{
+            input[type='text']{
+                width: 380px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .register{
+        &__left{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__describer{
+            h3{
+                line-height: 2;
+            }
+        }
+
+        &__right{
+            input[type='text']{
+                width: 250px;
+            }
+        }
+    }
+}

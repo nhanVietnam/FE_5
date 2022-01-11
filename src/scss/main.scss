@@ -1,0 +1,27 @@
+@import "abstracts/_mixin.scss";
+
+
+@import 'vendors/_bootstrap.scss';
+
+
+@import 'base/_reset.scss';
+@import 'base/_base.scss';
+@import 'base/_typography.scss';
+@import 'base/_variables.scss';
+
+
+@import 'layout/_header.scss';
+@import 'layout/_menu-mobile.scss';
+@import 'layout/_banner.scss';
+@import 'layout/_subbanner.scss';
+@import 'layout/_type.scss';
+@import 'layout/_hot.scss';
+@import 'layout/_model.scss';
+@import 'layout/_new-product.scss';
+@import 'layout/_hot-product.scss';
+@import 'layout/_style.scss';
+@import 'layout/_news.scss';
+@import 'layout/_register.scss';
+@import 'layout/_footer.scss';
+
+@import 'pages/_home.scss';
