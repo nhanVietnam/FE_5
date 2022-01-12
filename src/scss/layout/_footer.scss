@@ -2,6 +2,12 @@
     background-color: $bg-black-light;
     padding-top: 50px;
     color: $text-white;
+    a{
+        transition: 0.2s;
+        &:hover{
+            color: $orange;
+        }
+    }
     &__top{
         margin-bottom: 27px;
         &__left{

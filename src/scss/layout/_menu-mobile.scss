@@ -95,6 +95,7 @@
         }
     }
     &__left,&__right{
+        cursor: pointer;
         flex: 1;
         display: flex;
         align-items: center;
@@ -115,8 +116,12 @@
         font-size: 1.6rem;
         font-weight: 400;
         padding: 10px 8px;
+        transition: 0.2s;
         &.has-dropdown{
             position: relative;
+        }
+        &:hover{
+            color: $orange;
         }
     }
     &__sub-link{

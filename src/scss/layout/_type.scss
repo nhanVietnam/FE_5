@@ -9,6 +9,7 @@
 
     &__item{
         position: relative;
+        cursor: pointer;
         &__image{
             @include size(380px,500px);
         }
